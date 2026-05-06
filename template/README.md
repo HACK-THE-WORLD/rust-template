@@ -12,6 +12,20 @@
   [this](https://www.rust-lang.org/tools/install) guide.
 * run `cargo install {{project-name}}`
 
+## Development
+
+Install [prek](https://prek.j178.dev/) and set up the repository hooks:
+
+```shell
+prek install --prepare-hooks
+```
+
+Run all configured checks, including Gitleaks, at any time with:
+
+```shell
+prek run --all-files
+```
+
 ## License
 
 Licensed under either of

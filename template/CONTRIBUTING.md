@@ -44,8 +44,14 @@ This is no different than other Rust projects.
 ```shell
 git clone https://github.com/{{gh-username}}/{{project-name}}
 cd {{project-name}}
+prek install --prepare-hooks
 cargo test
 ```
+
+Install [`prek`](https://prek.j178.dev/) first, then run
+`prek install --prepare-hooks` once to install the git hooks and prepare the
+hook environments defined in `prek.toml`. The configured hooks include Rust
+formatting, Clippy, and a Gitleaks secret scan.
 
 ### Useful Commands
 {% if crate_type == "bin" %}
@@ -77,4 +83,10 @@ cargo test
 
   ```shell
   cargo fmt --all
+  ```
+
+- Run all configured hooks, including Gitleaks:
+
+  ```shell
+  prek run --all-files
   ```
